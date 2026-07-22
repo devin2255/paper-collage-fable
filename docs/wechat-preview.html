@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>说一个成语，Agent就能剪出竖屏故事片</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f4ef;
+      --panel: #fffdf7;
+      --ink: #1f1f1f;
+      --muted: #5f5a52;
+      --border: #ddd6c7;
+      --warn: #8c5c00;
+      --error: #9b1c1c;
+      --info: #1f5d8a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Georgia, "Noto Serif SC", serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, #efede5 0%, #f9f7f1 100%);
+    }
+    .shell {
+      display: grid;
+      grid-template-columns: minmax(280px, 360px) minmax(0, 1fr);
+      gap: 24px;
+      padding: 24px;
+      min-height: 100vh;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 12px 32px rgba(59, 43, 17, 0.08);
+    }
+    h1, h2, h3 { margin: 0 0 12px; }
+    h1 { font-size: 24px; }
+    h2 { font-size: 15px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-top: 24px; }
+    .meta-row { margin-bottom: 14px; }
+    .meta-label { font-size: 12px; text-transform: uppercase; color: var(--muted); letter-spacing: 0.08em; }
+    .meta-value { font-size: 16px; margin-top: 4px; word-break: break-word; }
+    .meta-source { font-size: 12px; color: var(--muted); margin-top: 4px; }
+    .pill {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 12px;
+      margin-right: 8px;
+      margin-bottom: 8px;
+      border: 1px solid var(--border);
+      background: #fbf8f0;
+    }
+    .check {
+      border-left: 4px solid var(--border);
+      padding: 10px 12px;
+      background: #fcfaf4;
+      margin-bottom: 10px;
+      border-radius: 8px;
+    }
+    .check.warn { border-color: var(--warn); }
+    .check.error { border-color: var(--error); }
+    .check.info { border-color: var(--info); }
+    .check-code { font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+    .article-shell {
+      max-width: 760px;
+      margin: 0 auto;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 16px 40px rgba(40, 33, 18, 0.10);
+    }
+    .banner {
+      border: 1px dashed var(--border);
+      border-radius: 14px;
+      padding: 14px;
+      margin-bottom: 18px;
+      background: #faf6ec;
+      color: var(--muted);
+    }
+    pre {
+      white-space: pre-wrap;
+      word-break: break-word;
+      background: #f6f3eb;
+      border-radius: 12px;
+      padding: 16px;
+      border: 1px solid var(--border);
+      overflow: auto;
+    }
+    @media (max-width: 960px) {
+      .shell { grid-template-columns: 1fr; }
+      .article-shell { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <aside class="panel">
+      <h1>Publish Preview</h1>
+      <div class="meta-source">C:\Users\Devin\paper-collage-fable\docs\wechat-article-paper-collage-fable.md</div>
+
+      <h2>Resolved Metadata</h2>
+      <div class="meta-row">
+        <div class="meta-label">Title</div>
+        <div class="meta-value">说一个成语，Agent就能剪出竖屏故事片</div>
+        <div class="meta-source">cli.title · 20 / 32</div>
+      </div>
+      <div class="meta-row">
+        <div class="meta-label">Author</div>
+        <div class="meta-value">Dorihue</div>
+        <div class="meta-source">cli.author · 7 / 16</div>
+      </div>
+      <div class="meta-row">
+        <div class="meta-label">Digest</div>
+        <div class="meta-value">说故事名就能出片：剪纸风竖屏寓言视频开源 Skill，附司马光砸缸成品截帧。</div>
+        <div class="meta-source">cli.digest · 38 / 128</div>
+      </div>
+
+      <h2>Context</h2>
+      <span class="pill">mode: ai</span>
+      <span class="pill">theme: spring-fresh</span>
+      <span class="pill">font: medium</span>
+      <span class="pill">background: none</span>
+      <span class="pill">preview: degraded</span>
+
+      <h2>Structure</h2>
+      <div class="meta-row">
+        <div class="meta-label">Body H1</div>
+        <div class="meta-value">说一个成语，Agent 就能剪出一条竖屏故事片</div>
+      </div>
+      <div class="meta-row">
+        <div class="meta-label">Images</div>
+        <div class="meta-value">4 total · 4 local · 0 remote · 0 ai</div>
+      </div>
+
+      <h2>Checks</h2>
+      
+        
+          <div class="check info">
+            <div class="check-code">info · TITLE_BODY_MISMATCH</div>
+            <div>Final article title differs from the body H1</div>
+            <div class="meta-source">confirm whether draft metadata title and body H1 are intended to differ</div>
+          </div>
+        
+          <div class="check info">
+            <div class="check-code">info · DIGEST_METADATA_ONLY</div>
+            <div>Digest affects draft metadata, not body HTML rendering</div>
+            <div class="meta-source">use body content or theme behavior to control visible article summary inside the HTML</div>
+          </div>
+        
+          <div class="check info">
+            <div class="check-code">info · IMAGE_REPLACEMENT_REQUIRES_UPLOAD_OR_DRAFT</div>
+            <div>Images are only uploaded and replaced during upload or draft flows</div>
+            <div class="meta-source">use --upload or --draft when you need local/remote/AI image references rewritten to published URLs</div>
+          </div>
+        
+          <div class="check info">
+            <div class="check-code">info · AI_MODE_ACTION_REQUIRED</div>
+            <div>AI mode produces a prompt/request instead of final HTML until an external model completes the flow</div>
+            <div class="meta-source">use --mode api for exact preview or complete the AI prompt externally</div>
+          </div>
+        
+      
+    </aside>
+
+    <main class="panel">
+      <div class="article-shell">
+        
+          <div class="banner">Preview degraded: AI mode currently yields a prompt/request instead of final HTML.</div>
+        
+        
+        
+          <h1 style="margin-bottom:12px;">说一个成语，Agent就能剪出竖屏故事片</h1>
+          <p style="color:#666; margin-top:0;">Dorihue</p>
+          <p style="color:#666;">说故事名就能出片：剪纸风竖屏寓言视频开源 Skill，附司马光砸缸成品截帧。</p>
+          <h2 style="margin-top:24px;">Markdown Body</h2>
+          <pre># 说一个成语，Agent 就能剪出一条竖屏故事片
+
+你有没有过这种瞬间——
+
+想给孩子讲《曹冲称象》，手机一划，全是同质化 PPT 式短视频：大字报标题、配乐吵得慌、画面还对不上旁白。
+
+或者你自己做内容：寓言故事明明人人爱看，可从分镜、配音、字幕到成片，一折腾就是一下午。
+
+现在有个更省事的玩法：
+
+**你只说故事名。AI Agent 按一套固定流程，给你吐出一条可发的 9:16 剪纸成片。**
+
+这个流程，我们做成了开源 Skill：`paper-collage-fable`。
+
+仓库在这里：  
+https://github.com/devin2255/paper-collage-fable
+
+---
+
+## 先看成品：《司马光砸缸》
+
+不是概念图，是已经剪出来的成片截帧。竖屏剪纸、白话旁白、字幕烧在画面上——发出去就能看。
+
+**开场：院中巨缸，玩耍起势**
+
+![司马光砸缸成片截帧1](assets/sima-guang/shot-01.jpg)
+
+**冲突：小孩落水，同伴逃跑，司马光站住**
+
+![司马光砸缸成片截帧3](assets/sima-guang/shot-03.jpg)
+
+**行动：从外侧抡石砸缸壁**
+
+![司马光砸缸成片截帧4](assets/sima-guang/shot-04.jpg)
+
+**点题：水流泻出，得救，纸签落款**
+
+![司马光砸缸成片截帧5](assets/sima-guang/shot-05.jpg)
+
+对 Agent 说一声「司马光砸缸」，就会自动走完这条流水线。我们还实做过《掩耳盗铃》《曹冲称象》——流程跑通了，才敢拿出来讲。
+
+---
+
+## 它到底解决什么问题？
+
+不是「再生成一段文案」，而是直接交付**能播的视频**。
+
+默认成片长这样：
+
+- 竖屏 9:16，适合短视频和朋友圈
+- 半色调剪纸拼贴风，一眼有辨识度
+- 白话文旁白，不念之乎者也
+- 本地推镜动画，不烧云端额度
+- 字幕直接烧进画面，发出去就能看
+
+你对 Agent 说一句：
+
+「曹冲称象」
+
+它就会自己走完：白话分镜 → 剪纸关键帧 → 推镜成片 → 配音 → 拼轨 → 烧字幕 → `final.mp4`。
+
+---
+
+## 为什么是「Skill」，不是又一个网页工具？
+
+网页工具通常是：你点按钮，它给你结果，逻辑黑盒，换个故事又要重新摸索。
+
+Skill 是给 Cursor、Claude Code、Codex、OpenCode 这类 Agent 用的「可复用工作说明书」。
+
+装一次之后，Agent 知道：
+
+1. 故事名怎么落成 5 场白话分镜  
+2. 剪纸视觉怎么锁风格，避免每镜换一张脸  
+3. 推镜怎么渲，旁白怎么卡时长  
+4. 字幕怎么烧，成片交到哪个路径  
+
+你换故事，不用换流程。  
+你换 Agent 框架，安装路径变一变就行。
+
+这才是它真正省时间的地方：**把一次偶然做对的事，沉淀成下次还能复用的能力。**
+
+---
+
+## 默认免费，是刻意设计的
+
+做短视频最容易被劝退的，是「每条都要扣一次生成费」。
+
+所以这个 Skill 默认走本地路线：
+
+- 动画：ffmpeg 推镜（Ken Burns）
+- 配音：edge-tts
+- 拼片 / 字幕：本机脚本
+
+想要更「纸片真在动」的效果，也可以再升级 Seedance；但那是可选项，不是入场券。
+
+对家长、老师、个人创作者来说，这意味着：
+
+**灵感来了就能做，不用先充值再创作。**
+
+---
+
+## 怎么装？（四条命令够用）
+
+先装系统依赖：`ffmpeg`、`ffprobe`、`node`、`python`，再：
+
+```bash
+pip install edge-tts
+```
+
+然后按你用的 Agent，把仓库 clone 到对应目录：
+
+**Cursor（全局）**
+
+```bash
+git clone https://github.com/devin2255/paper-collage-fable.git ~/.cursor/skills/paper-collage-fable
+```
+
+**Claude Code**
+
+```bash
+git clone https://github.com/devin2255/paper-collage-fable.git ~/.claude/skills/paper-collage-fable
+```
+
+**Codex**
+
+```bash
+git clone https://github.com/devin2255/paper-collage-fable.git ~/.codex/skills/paper-collage-fable
+```
+
+**OpenCode**
+
+```bash
+git clone https://github.com/devin2255/paper-collage-fable.git ~/.config/opencode/skills/paper-collage-fable
+```
+
+懒得记那么多？装到兼容面最广的路径也行：
+
+```bash
+git clone https://github.com/devin2255/paper-collage-fable.git ~/.agents/skills/paper-collage-fable
+```
+
+Windows 把 `~` 换成你的用户目录即可。更细的安装说明、符号链接、项目级安装，README 里都写全了。
+
+---
+
+## 装完怎么用？
+
+新开一个 Agent 对话，直接说：
+
+```text
+孔融让梨
+```
+
+或者：
+
+```text
+用 paper-collage-fable 做「愚公移山」竖屏剪纸视频
+```
+
+几分钟到十几分钟后（看机器和出图速度），你会在项目目录拿到：
+
+`renders/final.mp4`
+
+里面已经有旁白和字幕。拿去发短视频、发朋友圈、给孩子看，都够用。
+
+分镜不满意？跟 Agent 说「分镜 3 重画」。  
+缺字幕？说「补字幕」。  
+想更生动？再说「这两镜改成动态」。
+
+人负责审美和取舍，流水线负责重复劳动。
+
+---
+
+## 它适合谁？
+
+- 想给孩子做「成语故事短视频」的家长  
+- 需要稳定竖屏素材的教育 / 国学账号  
+- 用 Cursor、Claude Code、Codex、OpenCode 的开发者与创作者  
+- 嫌每次从零写提示词、从零拼成片的人  
+
+一句话：
+
+**你负责点题，Agent 负责出片。**
+
+---
+
+## 最后送你一个用法
+
+今晚就试这一句：
+
+「做一个守株待兔」
+
+如果成片出来了，欢迎在评论区甩你的故事名；  
+如果卡在安装或依赖上，也直接说你的框架（Cursor / Claude Code / Codex / OpenCode），我按路径帮你对一下。
+
+开源地址再放一次，方便收藏：
+
+https://github.com/devin2255/paper-collage-fable
+
+点个在看，让更多做内容的人少走弯路。你下一个想做成片的成语，是哪一个？</pre>
+        
+      </div>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,4 +1,4 @@
-__pycache__/
+﻿__pycache__/
 *.py[cod]
 .DS_Store
 Thumbs.db
@@ -8,3 +8,5 @@ Thumbs.db
 *.mp3
 .env
 .venv/
+docs/assets/sima-guang/*.png
+docs/preview-ai.html
